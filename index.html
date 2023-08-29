@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <header>
+        <h1 class="text-4xl text-violet-600 text-center my-5">Show Your Fevourite Phone</h1>
+    </header>
+    <main class="container mx-auto">
+        <!-- input and button  -->
+        <section class="flex flex-row items-center justify-center p-3 gap-2">
+            <input id="input-field" type="text" placeholder="Type here" class="input input-bordered input-success w-full max-w-xs" />
+            <button onclick="searchInputHandler()" class="btn btn-outline btn-info capitalize text-xl">Search...</button>
+        </section>
+        <!-- loading spinner  -->
+        <section>
+            <div id="loading-spinner" class="text-center mt-16 hidden">
+                <span class="loading loading-spinner text-primary loading-lg"></span>
+            </div>
+        </section>
+        <!-- if not found,then it show  -->
+        <section>
+            <div>
+                <h1 id="no-Found-Data" class="text-center text-3xl mt-12"></h1>
+            </div>
+        </section>
+        <!-- show container  -->
+        <section>
+            <div id="show-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 m-4">
+            </div>
+            <!-- show more button  -->
+            <div id="show-all-container" class="hidden text-center my-7">
+                <button onclick="showMoreButton()" class="btn btn-outline btn-info max-w-sm">Show More</button>
+            </div>
+            <!-- show modal when clicked Show Details button  -->
+            <div>
+                <!-- Open the modal using ID.showModal() method -->
+            <dialog id="show_details_my_modal" class="modal modal-bottom sm:modal-middle">
+            <form method="dialog" class="modal-box">
+                <h3 id="show-details-phone-name" class="font-bold text-3xl"></h3>
+               <div id="show-phone-details-container">
+
+               </div>
+                <div class="modal-action">
+                <!-- if there is a button in form, it will close the modal -->
+                <button class="btn">Close</button>
+                </div>
+              </form>
+             </dialog>
+            </div>
+        </section>
+    </main>
+
+<script src="./script.js"></script>
+</body>
+</html>
